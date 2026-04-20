@@ -1,5 +1,4 @@
 import { StrictMode, lazy, Suspense } from "react";
-import { registerSW } from "virtual:pwa-register";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
@@ -43,12 +42,6 @@ const BonusesAndPromotions = lazy(
 const DepositRules = lazy(() => import("./pages/Terms/DepositRules.jsx"));
 const WithdrawalRules = lazy(() => import("./pages/Terms/WithdrawalRules.jsx"));
 const LotteryRules = lazy(() => import("./pages/Terms/LotteryRules.jsx"));
-
-registerSW({
-  onOfflineReady() {
-    console.log("App lista para funcionar offline");
-  },
-});
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <StrictMode>
