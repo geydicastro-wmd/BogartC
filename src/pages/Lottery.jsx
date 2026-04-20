@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import Loading from "../components/common/loading";
 import useCmsPage from "../content/hooks/useCmsPage";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import daily3Img from "../assets/skin/lottery/daily3table.png";
-import daily4Img from "../assets/skin/lottery/daily4table.png";
+import daily3Img from "../assets/Skin/lottery/daily3table.png";
+import daily4Img from "../assets/Skin/lottery/daily4table.png";
 import LotteryTable from "../components/pages/LotteryTable";
 
 export default function Lottery() {
