@@ -67,7 +67,7 @@ export default function GameOfWeekModal() {
             onClick={() => setShow(false)}
             className="rounded-circle border border-white position-absolute top-0 start-100 translate-middle"
           >
-            Ã—
+           x
           </Button>
         </Modal.Header>
 
