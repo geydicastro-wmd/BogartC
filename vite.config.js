@@ -2,7 +2,17 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  plugins: [react()]
+  plugins: [react()],
+
+  server: {
+  proxy: {
+    "/api": {
+    target: "https://cmsfe3xc5.bookcdn.net:8443",
+    changeOrigin: true,
+    rewrite: (path) => path.replace(/^\/api/, "")
+  },
+  }
+}
 })
 
 
@@ -21,24 +31,24 @@ export default defineConfig(({ mode }) => {
     ],
 
     // Proxy nivel raíz usando la variable de entorno
-    server: {
-      proxy: {
-        "/api": {
-        target: "https://cmsfe3xc5.bookcdn.net:8443",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, "")
-      },
-        "/llms.txt": {
-          target: env.VITE_API_URL,
-          changeOrigin: true,
-        },
-        "/sitemap.xml": {
-          target: env.VITE_API_URL,
-          changeOrigin: true,
-        },
-        "/robots.txt": { target: env.VITE_API_URL, changeOrigin: true }
-      }
-    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
   }
 })
 */}
