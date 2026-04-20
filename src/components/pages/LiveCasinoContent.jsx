@@ -1,6 +1,5 @@
 import { Container, Row, Col, Image, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Breadcrumbs from "../../components/Breadcrumbs";
 
 const LiveCasinoContent = () => {
   const cardsData = [
@@ -24,10 +23,10 @@ const LiveCasinoContent = () => {
 
   return (
     <>
-      {/* Breadcrumb */}
+      {/* Breadcrumb
       <Container fluid className="mt-5">
         <Breadcrumbs />
-      </Container>
+      </Container> */}
 
       {/* Hero */}
       <div className="container hero-casino overflow-hidden text-center mt-2">

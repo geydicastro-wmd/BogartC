@@ -1,6 +1,5 @@
 import { useParams, Link } from "react-router-dom";
 import { Container, Col, Row, Button, Card } from "react-bootstrap";
-import Breadcrumbs from "../../components/Breadcrumbs";
 import { useContent } from "../../content/context/content-context";
 
 export default function PromoDetailContent() {
@@ -69,9 +68,11 @@ export default function PromoDetailContent() {
 
   return (
     <>
+
+    {/* 
       <Container className=" mt-5">
         <Breadcrumbs />
-      </Container>
+      </Container>*/}
 
       <Card className="promo-card shadow-lg mx-lg-auto mx-2 mb-5 mt-2">
         <div className="promo-image-wrapper">

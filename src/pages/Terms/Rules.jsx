@@ -2,7 +2,6 @@ import { Container, Row, Col, Card, ListGroup } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import Loading from "../../components/common/loading";
-import Breadcrumbs from "../../components/common/Breadcrumbs";
 import InternalHeader from "../../components/InternalHeader";
 import useCmsPage from "../../content/hooks/useCmsPage";
 import { decodeHtml } from "../../content/utils/content";
@@ -55,9 +54,11 @@ export default function Rules() {
 
       <InternalHeader title={decodeHtml(h2[0]?.content)} />
 
+
+      {/*
       <div className="container mt-5">
         <Breadcrumbs />
-      </div>
+      </div>*/}
 
       <Container className="my-5">
         <Row xs={1} md={2} className="g-4">

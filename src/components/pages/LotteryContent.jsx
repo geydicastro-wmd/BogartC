@@ -10,7 +10,6 @@ import {
   Badge,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Breadcrumbs from "../../components/Breadcrumbs";
 import LotteryTable from "./LotteryTable";
 import daily3Img from "../../assets/skin/lottery/daily3table.png";
 import daily4Img from "../../assets/skin/lottery/daily4table.png";
@@ -199,10 +198,10 @@ export default function LotteryContent() {
 
   return (
     <>
-      {/* Breadcrumb */}
+      {/* Breadcrumb 
       <Container fluid className="mt-5">
         <Breadcrumbs />
-      </Container>
+      </Container>*/}
 
       {/* Hero */}
       <div className="container hero-casino overflow-hidden text-center mt-2">

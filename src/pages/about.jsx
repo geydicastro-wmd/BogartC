@@ -2,7 +2,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
 import Loading from "../components/common/loading";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import Breadcrumbs from "../components/common/Breadcrumbs";
 import InternalHeader from "../components/InternalHeader";
 import useCmsPage from "../content/hooks/useCmsPage";
 
@@ -26,9 +25,10 @@ export default function About() {
       )}
 
       <InternalHeader title={h1[0]?.content} />
-      <div className="container mt-5">
+    
+    {/*  <div className="container mt-5">
         <Breadcrumbs />
-      </div>
+      </div>*/} 
 
       <Container className="my-3">
         <Row className="justify-content-center">

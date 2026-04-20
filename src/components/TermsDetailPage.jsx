@@ -2,7 +2,6 @@ import { useMemo } from "react";
 import { Container } from "react-bootstrap";
 import { Helmet } from "react-helmet-async";
 import Loading from "./common/loading";
-import Breadcrumbs from "./common/Breadcrumbs";
 import InternalHeader from "./InternalHeader";
 import useTermsContent from "../content/hooks/useTermsContent";
 import { decodeHtml } from "../content/utils/content";
@@ -10,7 +9,7 @@ import { decodeHtml } from "../content/utils/content";
 export default function TermsDetailPage({
   type,
   fallbackTitle,
-  logLabel: _logLabel,
+  //logLabel: _logLabel,
   fixBareListItems = false,
 }) {
   const { terms, translation, loading, error } = useTermsContent(type);
@@ -65,9 +64,9 @@ export default function TermsDetailPage({
 
       <InternalHeader title={title} />
 
-      <div className="container mt-5">
+    {/*  <div className="container mt-5">
         <Breadcrumbs />
-      </div>
+      </div>*/} 
 
       <Container className="p-0">
         <div
