@@ -1,0 +1,39 @@
+.rules-card {
+  border-radius: 8px;
+  border: none;
+  padding: 20px;
+}
+
+.rules-card .list-group-item {
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  padding: 10px 0;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.rules-card .list-group-item:hover {
+  color: #c89b3c;
+  transform: translateX(6px);
+}
+
+.rules-card .list-group-item.active {
+  color: #c89b3c;
+  font-weight: 700;
+}
+
+.rules-card .list-group-item::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  width: 0;
+  height: 2px;
+  background: #c89b3c;
+  transition: width 0.3s ease;
+}
+
+.rules-card .list-group-item:hover::before {
+  width: 8px;
+}

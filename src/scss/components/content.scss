@@ -1,0 +1,41 @@
+/* accordion style */
+
+.rules {
+  text-align: left;
+  margin-top: 40px;
+}
+
+.rules details {
+  border-bottom: 1px solid var(--app-bg);
+  padding: 15px 0;
+}
+
+.rules summary {
+  cursor: pointer;
+  font-weight: 700;
+  list-style: none;
+  position: relative;
+}
+
+/* remove default arrow */
+
+.rules summary::-webkit-details-marker {
+  display: none;
+}
+
+/* plus icon */
+
+.rules summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  font-size: 20px;
+  color: var( --btn-yellow-bg);
+}
+
+/* minus icon */
+
+.rules details[open] summary::after {
+  content: "-";
+  color: var(--app-text);
+}

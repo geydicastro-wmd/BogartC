@@ -1,0 +1,26 @@
+@use 'bootstrap/dist/css/bootstrap.min.css';
+
+@use "./buttons/buttons";
+@use './App.scss';
+@use './theme/theme.scss';
+
+@use './components/navbar.scss';
+@use './components/heroSlider';
+@use './components/content.scss';
+@use './components/footer.scss';
+@use './components/internalHeader.scss';
+@use './components/breadcrumbs.scss';
+@use './components/logobogart.scss';
+@use './components/modal.scss';
+@use './components/login.scss';
+@use './components/about.scss';
+@use './components/dropdownlanguage.scss';
+
+@use './pages/register.scss';
+
+@use './pages/rules.scss';
+@use './pages/promotion.scss';
+@use './pages/livecasino.scss';
+@use './pages/lottery.scss';
+@use './pages/cashier.scss';
+@use './pages/contact.scss';

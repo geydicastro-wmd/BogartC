@@ -1,0 +1,41 @@
+.internal-header-wrapper {
+  margin-top: 20px;
+}
+
+.internal-header {
+  position: relative;
+  height: 140px;
+
+  display: flex;
+  align-items: center;
+
+  padding-left: 40px;
+
+  border-radius: 12px;
+  overflow: hidden;
+
+  background-image: url("/src/assets/Skin/InternalHeader.png");
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+
+  h1 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    z-index: 2;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    height: 100px;
+    padding-left: 20px;
+
+    background-image: url("/src/assets/Skin/InternalHeaderMobile.png");
+    background-position: center;
+
+    h1 {
+      font-size: 1.4rem;
+    }
+}
+}

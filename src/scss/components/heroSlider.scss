@@ -1,0 +1,183 @@
+@use "../theme/tokens" as *;
+/* ============================================================
+   HeroSlider.css
+   ============================================================ */
+
+.hero-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  background: #0d0d0d;
+}
+
+/* ── Wrapper ── */
+.slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* ── Viewport (the visible window) ── */
+.slider-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ── Track (all slides in a row) ── */
+.slider-track {
+  display: flex;
+  will-change: transform;
+  cursor: grab;
+  user-select: none;
+}
+
+.slider-track.transition {
+  transition: transform 0.5s ease;
+}
+
+/* ── Individual slide ── */
+.slide {
+  flex: 0 0 50vw;          /* two half-visible + one full center */
+  height: 430px;
+  margin-left: 15px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  opacity: 0.55;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Character / product image */
+.slide-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  max-width: 60%;
+}
+
+/* ── Overlay: text + button – anchored LEFT ── */
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;   /* LEFT alignment */
+  padding: 2rem 2.5rem;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.35) 55%,
+    rgba(0, 0, 0, 0)    100%
+  );
+  pointer-events: none;      /* clicks pass through to the CTA only */
+}
+
+.slide-title {
+  color: $yellow;
+  font-size: clamp(1.4rem, 3vw, 2.8rem);
+  font-weight: 900;
+  margin: 0 0 0.4rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.slide-description {
+  color: #fff;
+  font-size: clamp(0.75rem, 1.4vw, 1rem);
+  margin: 0 0 1.2rem;
+  max-width: 320px;
+}
+
+/* CTA button */
+.slide-cta {
+  pointer-events: all;       /* re-enable clicks just for the button */
+  display: inline-block;
+  padding: 0.55rem 1.6rem;
+  background: $yellow;
+  color: $black;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: #ffc831;
+    transform: scale(1.04);
+    color: var(--btn-yellow-text);
+  }
+
+  &.active {
+    background-color: #ffe260;
+    color: $black;
+    box-shadow: 0 0 12px rgba(197, 160, 39, 0.6);
+  }
+}
+
+
+/* ── Arrows ── */
+.nav {
+  position: absolute;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.nav:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.nav.prev { left: 8px; }
+.nav.next { right: 8px; }
+
+/* ── Dots ── */
+.slider-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.dot.active {
+  background: #e8820c;
+  transform: scale(1.3);
+}
+
+/* ── Mobile: single full-width slide ── */
+@media (max-width: 850px) {
+  .slide {
+    flex: 0 0 100vw;
+    height: 220px;
+  }
+}

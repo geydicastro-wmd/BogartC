@@ -1,0 +1,60 @@
+.thm-img {
+  height: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.live-badge {
+  background: #ff3b3b;
+  color: #fff;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  animation: pulseLive 1.5s infinite;
+}
+
+@keyframes pulseLive {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+.live{
+  color:#ff2226;
+  border-color: #611818;
+}
+
+.live-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+
+  img {
+    transition: transform 0.4s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+
+  .live-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+
+  &:hover .live-overlay {
+    opacity: 1;
+  }
+}

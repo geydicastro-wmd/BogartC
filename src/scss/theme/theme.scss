@@ -1,0 +1,39 @@
+// theme.scss
+@use "./tokens" as *;
+@use "../buttons/buttons" as *;
+
+/* DEFAULT: DARK THEME */
+:root,
+[data-bs-theme="dark"] {
+  --bs-body-font-family: "Open Sans", sans-serif;
+
+  --app-bg: #{$gray};
+  --app-text: #{$white};
+
+  --nav-bg: #{$black};
+  --footer-bg: #{$black};
+
+  --btn-yellow-bg: #{$yellow};
+  --btn-yellow-text: #{$black};
+
+  --btn-outline-light: #{$white};
+  --btn-outline-dark: #{$black};
+}
+
+/* LIGHT THEME */
+[data-bs-theme="light"] {
+  --bs-body-font-family: "Open Sans", sans-serif;
+
+  --app-bg: #{$light}; 
+  --app-text: #{$gray}; 
+
+  --nav-bg: #{$light-body}; 
+  --footer-bg: #{$light-body};
+
+  --btn-yellow-bg: #{$yellow};
+  --btn-yellow-text: #{$black};
+
+  --btn-outline-light: #{$black};
+  --btn-outline-dark: #{$white};
+
+}

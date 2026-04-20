@@ -1,0 +1,115 @@
+@use "../theme/tokens" as *;
+
+.payout-section {
+  h3 {
+    font-weight: 700;
+  }
+
+  .card {
+    border-radius: 10px;
+  }
+}
+
+.box-right {
+  background-color: $gold;
+  color: $black;
+}
+
+.box-left {
+  background-color: $brown;
+  color: $light;
+}
+
+.pay-card {
+  border: none;
+  border-radius: 10px;
+  color: $white;
+  transition: all 0.3s ease;
+
+  &--in {
+    background: $brown;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  &--out {
+    background: $light-brown;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+
+.lottery-icon {
+  filter: grayscale(1);
+}
+
+.lottery-table-section {
+  background-color: $brown;
+}
+
+.lottery-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .lottery-img {
+    max-width: 220px;
+  }
+
+  .lottery-note {
+    color: $white;
+    font-weight: 700;
+    font-size: 14px;
+  }
+}
+
+.table-wrapper {
+  background: $light;
+}
+
+.lottery-table {
+  margin-bottom: 0;
+
+  thead {
+    background-color: $light;
+
+    th {
+      font-weight: 700;
+      text-align: left;
+    }
+  }
+
+  tbody {
+    td {
+      vertical-align: middle;
+    }
+
+    tr td:first-child {
+      font-weight: 500;
+    }
+  }
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+  .lottery-image {
+    flex-direction: row;
+    text-align: left;
+    padding: 15px;
+
+    .lottery-img {
+      max-width: 100px;
+      margin-right: 15px;
+    }
+
+    .lottery-note {
+      font-size: 13px;
+    }
+  }
+}

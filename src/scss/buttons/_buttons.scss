@@ -1,0 +1,149 @@
+@use "../theme/tokens" as *;
+
+.btn-yellow {
+  background-color: var(--btn-yellow-bg);
+  color: var(--btn-yellow-text);
+  border: none;
+  font-weight: 600;
+  border-radius: 25px;
+  padding: 6px 18px;
+
+  &:hover {
+    background-color: #ffc831;
+    color: var(--btn-yellow-text);
+  }
+
+  &.active {
+    background-color: #ffe260;
+    color: $black;
+    box-shadow: 0 0 12px rgba(197, 160, 39, 0.6);
+  }
+}
+
+.btn-outline-white {
+  background: transparent;
+  border: 1px solid var(--btn-outline-light);
+  color: var(--btn-outline-light);
+  border-radius: 25px;
+  padding: 6px 18px;
+ 
+  &:hover {
+    background-color: #dfdfdf1a;
+  }
+
+  &.active {
+    color: var(--btn-outline-light);
+    background: rgba(233, 233, 232, 0.2);
+    box-shadow: 0 0 12px rgba(197, 177, 111, 0.6);
+  }
+
+   &--lang {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 10px;
+    margin: 0 10px;
+
+    &:hover {
+      background: var(--app-bg);
+    }
+
+    &.active {
+      background: var(--btn-outline-light);
+      color: $white;
+    }
+  
+  }
+}
+
+.btn-outline-yellow {
+  background: transparent;
+  border: 1px solid var(--btn-yellow-bg);
+  color: var(--btn-yellow-bg);
+  border-radius: 25px;
+  padding: 6px 18px;
+
+  &:hover {
+    background-color: var(--btn-yellow-bg);
+    color: $black;
+  }
+
+  &.active {
+    background: rgba(212, 175, 55, 0.2);
+  }
+}
+
+.btn-outline-black {
+  background: transparent;
+  border: 2px solid var(--btn-outline-dark);
+  color: var(--btn-outline-dark);
+  border-radius: 25px;
+  padding: 6px 18px;
+
+  &:hover {
+    background-color: var(--btn-outline-dark);
+  }
+}
+
+.btn-rounded-black.theme-toggle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%; 
+  padding: 3px;
+  background: #2c2c2c;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* the moving circle */
+.theme-toggle .toggle-knob {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+/* move it when dark */
+.theme-toggle.dark .toggle-knob {
+  transform: translateX(30px);
+}
+.btn-rounded-black.theme-toggle:hover {
+  background-color: $gray;
+  transform: translateY(-1px);
+}
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+
+  background-color: $gray;
+  border: none;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    color: $black;
+    background-color: $light-body;
+  }
+}

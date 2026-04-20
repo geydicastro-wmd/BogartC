@@ -1,0 +1,31 @@
+@use "../theme/tokens" as *;
+
+.lang-dropdown {
+  position: relative;
+}
+
+.lang-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #1f253b;
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 80px;
+}
+
+.lang-item {
+  padding: 10px;
+  cursor: pointer;
+  color: $light-gray;
+}
+
+.lang-item:hover {
+  color: $white;
+  background: #2c3553;
+}
+
+.lang-item.active {
+  background: #ffd666;
+  color: $black;
+}

@@ -1,0 +1,21 @@
+@use "../theme/tokens" as *;
+
+.breadcrumb {
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: #aaa;
+
+    &:hover {
+      color: $gold;
+    }
+  }
+
+  .breadcrumb-item.active {
+    color: var(--app-text);
+    font-weight: 600;
+  }
+}

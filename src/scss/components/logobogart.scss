@@ -1,0 +1,51 @@
+@use "../theme/tokens" as *;
+
+.logo-bogart {
+   
+  width: 220px;
+  cursor: pointer;
+  transition: transform .3s ease;
+
+  &:hover {
+    transform: scale(1.04);
+  }
+
+  .logo-bg {
+    fill: $black;
+  }
+
+  .logo-inner {
+    fill: $white;
+  }
+
+  .logo-gold {
+    fill: $gold;
+    transition: filter .4s ease;
+  }
+
+  .logo-text {
+    fill: var(--btn-outline-light);
+    transition: fill .4s ease;
+  }
+
+  @media (max-width: 780px){
+    width: 160px;
+  }
+
+}
+
+@keyframes goldShine {
+  0% {
+    filter: drop-shadow(0 0 0px #d29f53);
+  }
+  50% {
+    filter: drop-shadow(0 0 12px #d29f53);
+  }
+  100% {
+    filter: drop-shadow(0 0 0px #d29f53);
+  }
+}
+
+.logo-bogart:hover .logo-gold {
+  animation: goldShine 1.6s ease-in-out infinite;
+}
