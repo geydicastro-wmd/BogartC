@@ -1,6 +1,5 @@
 import { Card, Container, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Breadcrumbs from "../../components/Breadcrumbs";
 import { HiGift } from "react-icons/hi2";
 import { useContent } from "../../content/context/content-context";
 
@@ -22,10 +21,6 @@ export default function PromoContent() {
 
   return (
     <>
-      <Container className="mt-5">
-        <Breadcrumbs />
-      </Container>
-
       <Container className="pt-2 pb-5">
         <h5 className="fw-bold">
           <HiGift className="me-2 mb-2" />
