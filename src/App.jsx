@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { Container, Offcanvas } from "react-bootstrap";
 import { Link, Outlet } from "react-router-dom";
 import ScrollToTopButton from "./components/common/ScrollToTopButton.jsx";
+import TawkTo from "./components/common/TawkTo.jsx";
 
 // Lazy components
 const Header = lazy(() => import("./components/layout/Header.jsx"));
@@ -14,6 +15,7 @@ function App() {
         <Header />
 
         <main>
+          <TawkTo />
           <Outlet />
         </main>
 
