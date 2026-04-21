@@ -25,17 +25,19 @@ export default function Footer() {
     <Container fluid className="footer-custom">
       <Row className="justify-content-around container mx-auto text-center pt-5">
         <Col xs={6} md="auto">
-          <a href="/about">{getText(p[0]?.content)}</a>
+          <Link to="/about">{getText(p[0]?.content)}</Link>
         </Col>
         <Col xs={6} md="auto">
-          <a href="/cashier">{getText(p[1]?.content)}</a>
+          <Link to="/cashier">{getText(p[1]?.content)}</Link>
         </Col>
         <Col xs={6} md="auto">
-          <a href="/rules">{getText(p[2]?.content)}</a>
+          <Link to="/rules">{getText(p[2]?.content)}</Link>
         </Col>
         <Col xs={6} md="auto">
-          <a href="/contact">{getText(p[3]?.content)}</a>
+          <Link to="/contact">{getText(p[3]?.content)}</Link>
         </Col>
+
+        {/* External links stay as <a> */}
         <Col xs={6} md="auto">
           <a
             href="https://www.affcorner.com/bogart-casino-affiliates"
@@ -113,7 +115,11 @@ export default function Footer() {
               <FaFacebookSquare />
             </a>
 
-            <a href="https://x.com/winatbogart" target="_blank" rel="noreferrer">
+            <a
+              href="https://x.com/winatbogart"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaSquareXTwitter />
             </a>
 
