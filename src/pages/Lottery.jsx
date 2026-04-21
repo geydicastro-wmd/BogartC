@@ -6,6 +6,9 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import daily3Img from "../assets/Skin/lottery/daily3table.png";
 import daily4Img from "../assets/Skin/lottery/daily4table.png";
 import LotteryTable from "../components/pages/LotteryTable";
+import California from "../assets/Skin/lottery/california.png";
+import NewYork from "../assets/Skin/lottery/newyork.png";
+import Texas from "../assets/Skin/lottery/texas.png";
 
 export default function Lottery() {
   const { page, loading, error, getBlocks, renderHtml } = useCmsPage("Lottery");
@@ -24,19 +27,19 @@ export default function Lottery() {
   const states = [
     {
       name: h3[0]?.content || "California",
-      img: "/src/assets/skin/lottery/california.png",
+      img: California,
       schedule: p[0]?.content || "Every day",
       time: "1:00 p.m. & 6:30 p.m. PT",
     },
     {
       name: h3[1]?.content || "New York",
-      img: "/src/assets/skin/lottery/newyork.png",
+      img: NewYork,
       schedule: p[0]?.content || "Every day",
       time: "12:20 p.m. & 7:30 p.m. ET",
     },
     {
       name: h3[2]?.content || "Texas",
-      img: "/src/assets/skin/lottery/texas.png",
+      img: Texas,
       schedule: p[1]?.content || "Monday through Saturday",
       time: "10:00 a.m., 12:27 p.m., 6:00 p.m. & 10:12 p.m.",
     },

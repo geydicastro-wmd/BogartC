@@ -4,6 +4,10 @@ import { Helmet } from "react-helmet-async";
 import Loading from "../components/common/loading";
 import useCmsPage from "../content/hooks/useCmsPage";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import HeroLiveCasino from "../assets/Skin/bogart-live-casino.jpg";
+import LiveBaccarat from "../assets/Skin/bogart_casino_livebaccarat.png";
+import LiveBlackJack from "../assets/Skin/bogart_casino_liveblackjack.png";
+import LiveRoulette from "../assets/Skin/bogart_casino_liveroulette.png";
 
 export default function LiveCasino() {
   const { page, translation, loading, error, getBlocks, getText, renderHtml } =
@@ -28,7 +32,7 @@ export default function LiveCasino() {
 
       <div className="container hero-casino overflow-hidden text-center mt-5">
         <Image
-          src="/src/assets/Skin/bogart-live-casino.jpg"
+          src={HeroLiveCasino}
           alt="Live Casino"
           rounded
           fluid
@@ -57,18 +61,18 @@ export default function LiveCasino() {
           <Col lg={12}>
             {[
               {
-                image: "/src/assets/Skin/bogart_casino_livebaccarat.png",
+                image: LiveBaccarat,
                 title: h5[0]?.content,
                 body: p[1]?.content,
               },
               {
-                image: "/src/assets/Skin/bogart_casino_liveblackjack.png",
+                image: LiveBlackJack,
                 title: h5[1]?.content,
                 body: p[2]?.content,
                 reverse: true,
               },
               {
-                image: "/src/assets/Skin/bogart_casino_liveroulette.png",
+                image: LiveRoulette,
                 title: h5[2]?.content,
                 body: p[3]?.content,
               },
