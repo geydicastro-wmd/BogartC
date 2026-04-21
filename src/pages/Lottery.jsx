@@ -5,10 +5,26 @@ import useCmsPage from "../content/hooks/useCmsPage";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import daily3Img from "../assets/Skin/lottery/daily3table.png";
 import daily4Img from "../assets/Skin/lottery/daily4table.png";
+import Daily3 from "../assets/Skin/lottery/bogart-lotto-daily-3.png"
+import Daily4 from "../assets/Skin/lottery/bogart-lotto-daily-4.png"
 import LotteryTable from "../components/pages/LotteryTable";
 import California from "../assets/Skin/lottery/california.png";
 import NewYork from "../assets/Skin/lottery/newyork.png";
 import Texas from "../assets/Skin/lottery/texas.png";
+import HeroLotteryMobile from "../assets/Skin/lottery/bogart-lottery-mobile.jpg";
+import HeroLotteryDesktop from "../assets/Skin/lottery/bogart-lottery-desktop.png";
+import LottoLogin from "../assets/Skin/lottery/lotto-login.png";
+import LottoDaily from "../assets/Skin/lottery/lotto-daily.png";
+import LottoState from "../assets/Skin/lottery/lotto-state.png";
+import LottoEvent from "../assets/Skin/lottery/lotto-event.png";
+import LottoStraight from "../assets/Skin/lottery/lotto-straight.png";
+import LottoSubmit from "../assets/Skin/lottery/lotto-submit.png";
+import ball01 from "../assets/Skin/lottery/lottery-balls/lottery-ball_01.svg";
+import ball02 from "../assets/Skin/lottery/lottery-balls/lottery-ball_02.svg";
+import ball03 from "../assets/Skin/lottery/lottery-balls/lottery-ball_02.svg";
+import ball04 from "../assets/Skin/lottery/lottery-balls/lottery-ball_03.svg";
+import ball05 from "../assets/Skin/lottery/lottery-balls/lottery-ball_04.svg";
+import ball06 from "../assets/Skin/lottery/lottery-balls/lottery-ball_04.svg";
 
 export default function Lottery() {
   const { page, loading, error, getBlocks, renderHtml } = useCmsPage("Lottery");
@@ -47,33 +63,33 @@ export default function Lottery() {
 
   const steps = [
     {
-      img: "/src/assets/skin/lottery/lotto-login.png",
-      ball: "01",
+      img: LottoLogin,
+      ball: ball01,
       text: p[2]?.content || "Log in",
     },
     {
-      img: "/src/assets/skin/lottery/lotto-daily.png",
-      ball: "02",
+      img: LottoDaily,
+      ball: ball02,
       text: p[3]?.content || "Select Daily 3 or Daily 4",
     },
     {
-      img: "/src/assets/skin/lottery/lotto-state.png",
-      ball: "03",
+      img: LottoState,
+      ball: ball03,
       text: p[4]?.content || "Choose your state",
     },
     {
-      img: "/src/assets/skin/lottery/lotto-event.png",
-      ball: "04",
+      img: LottoEvent,
+      ball: ball04,
       text: p[5]?.content || "Select draw",
     },
     {
-      img: "/src/assets/skin/lottery/loto-straight.png",
-      ball: "05",
+      img: LottoStraight,
+      ball: ball05,
       text: p[6]?.content || "Pick numbers & bet",
     },
     {
-      img: "/src/assets/skin/lottery/loto-submit.png",
-      ball: "06",
+      img: LottoSubmit,
+      ball: ball06,
       text: p[7]?.content || "Submit",
     },
   ];
@@ -110,14 +126,14 @@ export default function Lottery() {
         <picture>
           <source
             media="(max-width: 767px)"
-            srcSet="/src/assets/skin/lottery/bogart-lottery-mobile.jpg"
+            srcSet={HeroLotteryMobile}
           />
           <source
             media="(min-width: 768px)"
-            srcSet="/src/assets/skin/lottery/bogart-lottery-desktop.png"
+            srcSet={HeroLotteryDesktop}
           />
           <img
-            src="/src/assets/skin/lottery/bogart-lottery-desktop.png"
+            src={HeroLotteryDesktop}
             alt="Lottery"
             className="img-fluid rounded"
           />
@@ -131,9 +147,7 @@ export default function Lottery() {
               <Col xs={12} lg={6} key={columnIndex}>
                 <Image
                   src={
-                    columnIndex === 0
-                      ? "/src/assets/skin/lottery/bogart-lotto-daily-3.png"
-                      : "/src/assets/skin/lottery/bogart-lotto-daily-4.png"
+                    columnIndex ===  0 ? Daily3 : Daily4
                   }
                   fluid
                   className="mb-4"
@@ -201,7 +215,7 @@ export default function Lottery() {
                   <Image src={step.img} fluid />
                   <div className="lottery-ball mt-3 position-absolute top-100 start-50 translate-middle">
                     <Image
-                      src={`/src/assets/skin/lottery/lottery-balls/lottery-ball_${step.ball}.svg`}
+                      src={step.ball}
                       fluid
                       width={60}
                     />
