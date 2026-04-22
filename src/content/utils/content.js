@@ -54,6 +54,23 @@ export function getBlocksFromTranslation(translation) {
   return Array.isArray(translation?.content) ? translation.content : [];
 }
 
+export function getBlocksFromHtml(html) {
+  if (!html || typeof document === "undefined") {
+    return [];
+  }
+
+  const container = document.createElement("div");
+  container.innerHTML = decodeHtml(html);
+
+  return Array.from(container.children)
+    .map((node, index) => ({
+      id: index,
+      type: node.tagName.toLowerCase(),
+      content: node.innerHTML,
+    }))
+    .filter((block) => block.type);
+}
+
 export function filterBlocks(blocks = [], type) {
   return blocks.filter((block) => block.type === type);
 }
