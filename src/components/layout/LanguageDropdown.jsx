@@ -5,6 +5,7 @@ import { useLanguage } from "../../content/context/language-context";
 const LANGS = [
   { code: "en", label: "🇺🇸 EN" },
   { code: "es", label: "🇪🇸 ES" },
+  { code: "pt", label: "🇵🇹 PT" },
 ];
 
 export default function LanguageDropdown() {

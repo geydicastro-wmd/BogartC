@@ -12,10 +12,32 @@ import {
 
 export default function Cashier() {
   const [open, setOpen] = useState("deposit");
-  const depositLogos = depositMethods.map((item) => item.logo);
-  const withdrawalLogos = withdrawalMethods.map((item) => item.logo);
+
   const { page, translation, loading, error, getBlocks, renderHtml } =
     useCmsPage("Cashier");
+
+  const lang = translation?.language || "en";
+  const normalizedLang = lang.toLowerCase();
+
+  const getMethodDivIndex = (method, fallbackIndex) => {
+    if (typeof method.apiDivNumber === "number") return method.apiDivNumber - 1;
+    if (
+      method.apiDivNumber &&
+      method.apiDivNumber[normalizedLang] !== undefined
+    ) {
+      return method.apiDivNumber[normalizedLang] - 1;
+    }
+    return fallbackIndex;
+  };
+
+  // 🔥 Filtrar depósitos por idioma
+  const filteredDeposits = depositMethods.filter((method) => {
+    if (!method.languages) return true;
+    return method.languages.includes(normalizedLang);
+  });
+
+  // withdrawals normalmente no cambian
+  const filteredWithdrawals = withdrawalMethods;
 
   if (loading) return <Loading />;
   if (error) return <div>Error: {error}</div>;
@@ -58,20 +80,34 @@ export default function Cashier() {
           <Col xs={12}>
             <Collapse in={open === "deposit"}>
               <Row className="justify-content-center g-3">
-                {depositLogos.map((logo, index) => (
+                {filteredDeposits.map((method, index) => (
                   <Col lg={3} md={6} xs={12} key={`deposit-${index}`}>
                     <Card className="h-100">
-                      <Card.Img
-                        variant="top"
-                        className="p-3 bg-light"
-                        src={logo}
-                        alt={`deposit-method-${index + 1}`}
-                        height={80}
-                      />
+                      
+                      <div className="card-img-top custom-logo-container">
+                        {Array.isArray(method.logo) ? (
+                          method.logo.map((img, i) => (
+                            <img
+                              key={i}
+                              src={img}
+                              className="logo-multi"
+                              alt={`${method.title || "deposit-method"}-${i + 1}`}
+                            />
+                          ))
+                        ) : (
+                          <img
+                            src={method.logo}
+                            className="logo-single"
+                            alt={method.title || `deposit-method-${index + 1}`}
+                          />
+                        )}
+                      </div>
                       <Card.Body>
                         <div
                           className="banking-card-body"
-                          dangerouslySetInnerHTML={renderHtml(divs[index]?.content)}
+                          dangerouslySetInnerHTML={renderHtml(
+                            divs[getMethodDivIndex(method, index)]?.content
+                          )}
                         />
                       </Card.Body>
                     </Card>
@@ -82,21 +118,21 @@ export default function Cashier() {
 
             <Collapse in={open === "withdrawal"}>
               <Row className="justify-content-center g-3">
-                {withdrawalLogos.map((logo, index) => (
+                 {filteredWithdrawals.map((method, index) => (
                   <Col lg={3} md={6} xs={12} key={`withdrawal-${index}`}>
                     <Card className="h-100">
                       <Card.Img
                         variant="top"
                         className="p-3 bg-light"
-                        src={logo}
+                         src={method.logo}
                         alt={`withdrawal-method-${index + 1}`}
                         height={80}
                       />
-                      <Card.Body>
+                       <Card.Body>
                         <div
                           className="banking-card-body"
                           dangerouslySetInnerHTML={renderHtml(
-                            divs[index + depositLogos.length]?.content,
+                            divs[index + filteredDeposits.length]?.content
                           )}
                         />
                       </Card.Body>

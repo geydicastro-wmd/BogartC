@@ -22,3 +22,31 @@ ul {
     }
   }
 }
+
+.custom-logo-container {
+  min-height: 80px;
+  background: #f8f9fa;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 17px;
+
+  // 👇 igual que Card.Img
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+
+  img {
+    object-fit: contain;
+  }
+
+  .logo-single {
+    height: 50px;
+  }
+
+  .logo-multi {
+    height: 25px;
+  }
+}

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { LanguageContext } from "./language-context";
 
-const SUPPORTED_LANGS = ["en", "es"];
+const SUPPORTED_LANGS = ["en", "es", "pt"];
 
 function detectBrowserLang() {
   const browserLang = navigator.language?.slice(0, 2).toLowerCase();
